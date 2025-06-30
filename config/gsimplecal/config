@@ -1,0 +1,7 @@
+[main]
+background = #1e1e2e
+text_color = #cdd6f4
+header_color = #89b4fa
+highlight_color = #f5c2e7
+window_width = 240
+font = JetBrains Mono 10

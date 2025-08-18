@@ -1,0 +1,127 @@
+@define-color background rgba(30, 0, 20, 0.8);
+@define-color container-bg rgba(143, 19, 122, 0.4);
+@define-color text #ffffff;
+@define-color text2 #ff80ab;
+@define-color accent #db0db9;
+@define-color accentDark rgba(89, 10, 76, 0.3);
+@define-color warning #ffb74d;
+@define-color critical #f44336;
+
+* {
+    font-size: 15px;
+    min-height: 0;
+    box-shadow: none;
+}
+
+#tray menu {
+    background: @background; /* Цвет фона */
+    border-radius: 5px; /* Закруглённые углы */
+    border: 1px solid @accentDark;/* Граница */
+    padding: 8px;
+}
+
+#tray menuitem {
+    color: #d8dee9; /* Цвет текста */
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+#tray menuitem:hover {
+    background: @accentDark; /* Цвет при наведении */
+}
+
+window#waybar {
+    background: transparent;
+    color: @text;
+}
+
+/* Общий стиль для всех модулей */
+.modules-left,
+/* .modules-center, */
+.modules-right {
+    background: @container-bg;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin: 3px 0;
+}
+.modules-center{
+  font-weight: 700;
+}
+
+/* Стили отдельных модулей */
+#workspaces {
+    padding: 0 2px;
+    margin: 0;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: @text;
+}
+#workspaces button.focused{
+  background-color: @accentDark;
+  box-shadow: inset 0 -3px transparent;
+  text-shadow:none;
+}
+
+#workspaces button.active {
+    color: @accent;
+}
+#workspaces button.urgent{
+  color: @text2;
+}
+#workspaces button:hover{
+  background: rgba(0,0,0,0.2);
+  box-shadow: inset 0 -3px transparent;
+  text-shadow: none;
+}
+#custom-music {
+    color: @text2; 
+    margin: 0 4px;
+}
+#custom-music.paused {
+  color: @text;  
+  opacity: 0.1;
+}
+
+#pulseaudio,
+#network,
+#battery,
+#memory,
+#temperature,
+#clock {
+  color: @text2;
+    padding: 0 8px;
+    margin: 0 2px;
+}
+
+#battery.warning {
+    color: @warning;
+}
+
+#battery.critical {
+    color: @critical;
+    animation: blink 1s infinite;
+}
+
+#clock{
+  color: @text;
+}
+#memory.warning {
+    color: @warning;
+}
+
+#memory.critical {
+    color: @critical;
+}
+
+#temperature.critical {
+    color: @critical;
+}
+
+
+/* Анимация для критических состояний */
+@keyframes blink {
+    50% { opacity: 0.5; }
+}

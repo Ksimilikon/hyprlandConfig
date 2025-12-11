@@ -30,7 +30,7 @@ input {
         // dwtp
         // drag false
         // drag-lock
-        natural-scroll
+        // natural-scroll
         // accel-speed 0.2
         // accel-profile "flat"
         // scroll-method "two-finger"
@@ -331,7 +331,7 @@ binds {
     // in the end. To find an XKB name for a particular key, you may use a program
     // like wev.
     //
-    // "Mod" is a special modifier equal to Super when running on a TTY, and to Alt
+    // "Mod" is a special modifier equal to Mod when running on a TTY, and to Alt
     // when running as a winit window.
     //
     // Most actions that you can bind here can also be invoked programmatically with
@@ -342,11 +342,11 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+Q hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
-    Super+Shift+F hotkey-overlay-title="Open firefox" {spawn "firefox";}
-    Super+R hotkey-overlay-title="Wofi" {spawn "wofi";}
+    Mod+Q         hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
+    Mod+R         hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+Alt+L     hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    // Mod+Shift+F   hotkey-overlay-title="Open firefox" { spawn "firefox"; }
+    Mod+Shift+Z   hotkey-overlay-title="Open zen-browser" { spawn "zen-browser"; }
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
     // Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
@@ -357,10 +357,10 @@ binds {
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
     XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
-    XF86AudioNext        allow-when-locked=true {spawn "playerctl next";}
-    XF86AudioPrev        allow-when-locked=true {spawn "playerctl previous";}
-    XF86AudioPause       allow-when-locked=true {spawn "playerctl play-pause";}
-    XF86AudioPlay        allow-when-locked=true {spawn "playerctl play-pause";}
+    XF86AudioNext        allow-when-locked=true { spawn "playerctl" "next"; }
+    XF86AudioPrev        allow-when-locked=true { spawn "playerctl" "previous"; }
+    XF86AudioPause       allow-when-locked=true { spawn "playerctl" "play-pause"; }
+    XF86AudioPlay        allow-when-locked=true { spawn "playerctl" "play-pause"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
@@ -519,7 +519,7 @@ binds {
     // Expel the bottom window from the focused column to the right.
     Mod+Period { expel-window-from-column; }
 
-    Mod+R { switch-preset-column-width; }
+    Mod+Ctrl+P { switch-preset-column-width; }
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
     Mod+F { maximize-column; }

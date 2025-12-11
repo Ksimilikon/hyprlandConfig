@@ -3,8 +3,7 @@
   "position": "top",      // Расположение (top, bottom, left, right)
   "height": 30,           // Высота панели
   "spacing": 5,           // Отступы между модулями
-  "modules-left": ["hyprland/workspaces", "custom/music"],  // Модули слева
-  "modules-center": ["hyprland/window"],// Модули в центре
+  "modules-left": [custom/music"],  // Модули слева
   "modules-right": ["pulseaudio", "network", "battery", "memory", "temperature", "clock"],  // Модули справа
 
   "pulseaudio": {
@@ -30,15 +29,7 @@
     "on-scroll-up": "playerctl next",
     "on-scroll-down": "playerctl previous"
   },
-  "hyprland/window": {
-    "format": "{title}",
-    "max-length": 40,
-    "separate-outputs": true,
-    "rewrite": {
-      "": "Hyprland" },
-    "on-click": "~/.config/scripts/swww-pywal"
-  },
-  "hyprland/workspaces": {
+  "cffi/niri-taskbar": {
     "format": "{icon}",
     "on-click": "activate",
     "format-icons": {

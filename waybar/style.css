@@ -19,15 +19,11 @@ window#waybar {
 
 /* Общий стиль для всех модулей */
 .modules-left,
-.modules-center,
 .modules-right {
     background-color: @container-bg;
     border-radius: 5px;
     padding: 0 10px;
     margin: 3px 0;
-}
-.modules-center{
-  font-weight: 700;
 }
 
 /* Стили отдельных модулей */

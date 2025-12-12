@@ -1,0 +1,15 @@
+yazi
+nvim
+thunar
+
+wayland
+hyprland/niri (+ xwayland-sattelite -+)
+waybar
+hyprpaper
+hypridle
+hyprlock/swaylock -+
+
+pipewire?
+
+firefox
+NetworkManager

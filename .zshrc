@@ -7,4 +7,4 @@ alias marysyu="sudo pacman -Syu && echo \"Last update: $(date)\" >> .info"
 alias arividerchi="shutdown now"
 alias adios="shutdown now"
 
-alias hp="hyprland"
+alias hp="start-hyprland"
